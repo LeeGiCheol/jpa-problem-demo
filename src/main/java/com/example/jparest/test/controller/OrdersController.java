@@ -64,9 +64,6 @@ public class OrdersController {
     public ResponseEntity<?> findAllNew() {
         List<FindOrdersNewResponseDto> orders = ordersService.findAllNew();
 
-        for (FindOrdersNewResponseDto order : orders) {
-            order.getUsers().getName();
-        }
         return ResponseEntity.ok(orders);
     }
 
