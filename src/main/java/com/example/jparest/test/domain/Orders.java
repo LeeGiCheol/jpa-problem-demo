@@ -19,7 +19,7 @@ public class Orders {
     @JoinColumn(name = "USER_ID")
     private Users users;
 
-    public void setUsers(Users users) {
+    public void relationSetUsers(Users users) {
         this.users = users;
         users.getOrders().add(this);
     }

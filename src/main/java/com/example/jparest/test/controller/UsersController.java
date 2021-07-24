@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.EntityManager;
+
 @RestController
 @RequiredArgsConstructor
 public class UsersController {
 
     private final UsersService usersService;
-
+    private final EntityManager em;
 
     @PostMapping("/signUp")
     public ResponseEntity<SignUpResponseDto> signUp(@RequestBody SignUpRequestDto request) {
